@@ -5,7 +5,7 @@
     <!-- Focus Overlay -->
     <div
       v-if="search"
-      class="absolute top-0 left-0 w-screen h-screen bg-overlay z-10"
+      class="absolute top-0 left-0 w-screen h-screen bg-overlay z-20"
     />
     <div class="w-[100%] col-span-6">
       <div
