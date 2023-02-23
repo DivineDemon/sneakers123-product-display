@@ -1,11 +1,16 @@
 <template>
   <div class="home">
-    <p class="text-3xl font-bold text-primary">Hi!</p>
+    <BreadCrumbs />
   </div>
 </template>
 
 <script>
+import BreadCrumbs from "@/components/BreadCrumbs.vue";
+
 export default {
   name: "HomeView",
+  components: {
+    BreadCrumbs,
+  },
 };
 </script>
