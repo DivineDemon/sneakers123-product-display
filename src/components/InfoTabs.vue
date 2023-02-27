@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="w-[100%] mt-5 flex flex-row items-center justify-start space-x-14 pl-11"
+    class="w-[100%] my-5 flex flex-row items-center justify-start space-x-14 pl-11 shadow-lg"
   >
     <li
       id="prices"
@@ -69,3 +69,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ul::before {
+  box-shadow: 0px 15px 5px gray;
+}
+</style>

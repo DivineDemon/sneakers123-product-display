@@ -7,7 +7,7 @@
       <InfoTabs />
     </div>
     <!-- Sale Info -->
-    <div class="bg-gray-300"></div>
+    <div class="bg-gray-300 shadow-2xl shadow-gray-900"></div>
   </div>
 </template>
 
