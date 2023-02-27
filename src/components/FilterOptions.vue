@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[75%] flex flex-row px-11 pb-11">
+  <div class="w-[100%] flex flex-row mb-7">
     <ul class="flex-1 flex flex-row items-center justify-start space-x-5">
       <li class="bg-white rounded-md p-2 shadow-lg">
         <VueIcons :name="'adjustments'" :size="'w-6 h-6'" />

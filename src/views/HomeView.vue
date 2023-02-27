@@ -7,8 +7,9 @@
       <InfoTabs />
     </div>
     <!-- Sale Info -->
-    <div>
+    <div class="w-[75%] px-11 pb-11">
       <FilterOptions />
+      <ShopList />
     </div>
   </div>
 </template>
@@ -18,11 +19,13 @@ import InfoTabs from "@/components/InfoTabs.vue";
 import BreadCrumbs from "@/components/BreadCrumbs.vue";
 import ProductCard from "@/components/ProductCard.vue";
 import FilterOptions from "@/components/FilterOptions.vue";
+import ShopList from "@/components/ShopList.vue";
 
 export default {
   name: "HomeView",
   components: {
     InfoTabs,
+    ShopList,
     BreadCrumbs,
     ProductCard,
     FilterOptions,
