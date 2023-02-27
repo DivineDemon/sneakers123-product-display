@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="w-[100%] my-5 flex flex-row items-center justify-start space-x-14 pl-11 shadow-lg"
+    class="w-[100%] mt-5 my-5 flex flex-row items-center justify-start space-x-14 pl-11 shadow-lg"
   >
     <li
       id="prices"
