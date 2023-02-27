@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="w-screen m-4 flex flex-row items-center justify-left text-gray-500"
+    class="w-screen my-4 ml-11 flex flex-row items-center justify-left text-gray-500"
   >
     <li>Start</li>
     <li>Clothing & Accessories</li>

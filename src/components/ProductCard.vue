@@ -40,7 +40,7 @@
       <img
         src="@/assets/img/angle1.png"
         alt="main-shot"
-        class="w-full h-full"
+        class="p-2 w-full h-full"
       />
       <p
         class="absolute top-4 left-4 px-2 py-1 rounded-md text-sm font-medium text-red-600 bg-red-200"
