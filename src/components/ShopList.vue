@@ -1,7 +1,9 @@
 <template>
   <ul class="flex flex-col">
     <!-- Ad -->
-    <li class="bg-white flex flex-row items-center space-x-5 rounded-xl">
+    <li
+      class="bg-white flex flex-row items-center space-x-5 rounded-xl shadow-lg"
+    >
       <div
         class="rounded-l-xl px-1 py-6 bg-green-200 text-green-500 flex items-center justify-center"
       >
