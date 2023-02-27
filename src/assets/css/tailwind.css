@@ -6,3 +6,11 @@
 * {
   font-family: 'Barlow', sans-serif;
 }
+/* Modal Custom Settings */
+.vm--modal {
+  border-radius: 15px;
+}
+
+.vm--overlay {
+  background: rgba(51, 31, 40, 0.7) !important;
+}
