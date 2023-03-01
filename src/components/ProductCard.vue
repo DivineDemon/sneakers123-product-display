@@ -142,11 +142,7 @@
           />
         </li>
         <li>
-          <VueIcons
-            :name="'dots'"
-            :color="'black'"
-            :size="'p-1 w-16 h-16 rounded-lg border border-gray-400'"
-          />
+          <ShoeVersions />
         </li>
       </ul>
     </div>
@@ -157,6 +153,7 @@
 import VueIcons from "@/utils/VueIcons.vue";
 import ShoeRating from "@/components/Modals/ShoeRating.vue";
 import PriceAlert from "./Modals/PriceAlert.vue";
+import ShoeVersions from "./Modals/ShoeVersions.vue";
 
 export default {
   name: "ProductCard",
@@ -164,6 +161,7 @@ export default {
     VueIcons,
     ShoeRating,
     PriceAlert,
+    ShoeVersions,
   },
 };
 </script>
