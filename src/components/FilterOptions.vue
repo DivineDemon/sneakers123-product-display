@@ -1,8 +1,8 @@
 <template>
   <div class="w-[100%] flex flex-row mb-7">
     <ul class="flex-1 flex flex-row items-center justify-start space-x-5">
-      <li class="bg-white rounded-md p-2 shadow-lg">
-        <VueIcons :name="'adjustments'" :size="'w-6 h-6'" />
+      <li>
+        <FilterList />
       </li>
       <li class="bg-white rounded-md p-2 shadow-lg flex flex-row space-x-2">
         <VueIcons :name="'box'" :size="'w-6 h-6'" />
@@ -30,11 +30,13 @@
 
 <script>
 import VueIcons from "@/utils/VueIcons.vue";
+import FilterList from "./Modals/FilterList.vue";
 
 export default {
   name: "FilterOptions",
   components: {
     VueIcons,
+    FilterList,
   },
 };
 </script>
