@@ -14,3 +14,19 @@
 .vm--overlay {
   background: rgba(51, 31, 40, 0.7) !important;
 }
+/* Multiselect Custom Settings */
+.multiselect__tag {
+  background: #EB145F;
+}
+
+.multiselect__tag-icon:hover {
+  background: #EB145F;
+}
+
+.multiselect__tag-icon::after {
+  color: white;
+}
+
+.multiselect__option:hover {
+  background: #EB145F;
+}

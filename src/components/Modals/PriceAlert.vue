@@ -183,12 +183,20 @@
             class="mb-5 w-[100%] p-5 bg-gray-200 rounded-lg"
           >
             <p class="mb-1">Exclude stores</p>
-            <div
-              class="flex flex-row space-x-2 items-center justify-center bg-white rounded-lg p-2 w-[100%] border border-gray-300"
+            <Multiselect
+              class="bg-white rounded-lg w-[100%] border border-gray-300"
+              v-model="excludedShops"
+              :options="shops"
+              :multiple="true"
+              :close-on-select="false"
+              :clear-on-select="false"
+              :preserve-search="true"
+              label="name"
+              track-by="name"
+              :preselect-first="false"
             >
-              <input type="text" class="flex-1" />
-              <VueIcons :name="'chevron-down'" :size="'w-6 h-6'" />
-            </div>
+              {{ excludedShops }}
+            </Multiselect>
             <!-- Checkboxes -->
             <div
               class="mt-5 w-[100%] flex flex-row items-center justify-start space-x-3"
@@ -244,18 +252,32 @@
 </template>
 
 <script>
+import Multiselect from "vue-multiselect";
+
 import VueIcons from "@/utils/VueIcons.vue";
+import "vue-multiselect/dist/vue-multiselect.min.css";
 
 export default {
   name: "PriceAlert",
   components: {
     VueIcons,
+    Multiselect,
   },
   data() {
     return {
       range: 29,
       activeRadio: "dropped",
       activeAdvanced: false,
+      excludedShops: [],
+      shops: [
+        { id: 1, name: "Kickz" },
+        { id: 2, name: "OnBuy.com" },
+        { id: 3, name: "Secret Sales" },
+        { id: 4, name: "Nike UK" },
+        { id: 5, name: "Size?" },
+        { id: 6, name: "Hanon" },
+        { id: 7, name: "GOAT" },
+      ],
     };
   },
   methods: {
