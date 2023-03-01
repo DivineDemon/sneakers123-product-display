@@ -5,15 +5,15 @@
     </button>
     <modal
       name="feedback-modal"
-      :height="'590px'"
+      :height="'auto'"
       :width="'640px'"
       :clickToClose="false"
     >
-      <div class="p-5 w-[100%] h-[100%] flex flex-col items-center">
+      <div class="p-10 w-[100%] h-[100%] flex flex-col items-center">
         <!-- Close Button -->
         <button
           @click="hide"
-          class="cursor-pointer hover:bg-gray-200 rounded-full p-2 place-self-end"
+          class="cursor-pointer hover:bg-gray-200 rounded-full p-3 absolute top-3 right-3"
         >
           <VueIcons :name="'wrong'" :size="'w-6 h-6'" />
         </button>

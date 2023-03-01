@@ -65,17 +65,11 @@
           <VueIcons :name="'star'" :color="'#F7A301'" :size="'w-6 h-6'" />
           <span class="font-semibold">4.6</span>
         </li>
-        <li
-          class="flex flex-row items-center justify-center space-x-2 px-5 border-r border-gray-500"
-        >
-          <VueIcons :name="'pencil'" :size="'w-5 h-5'" />
-          <span class="font-medium">Rate</span>
+        <li>
+          <ShoeRating />
         </li>
-        <li
-          class="flex flex-row items-center justify-center space-x-2 px-5 border-r border-gray-500"
-        >
-          <VueIcons :name="'bell'" :size="'w-5 h-5'" />
-          <span class="font-medium">Price Alert</span>
+        <li>
+          <PriceAlert />
         </li>
         <li class="flex flex-row items-center justify-center space-x-2 px-5">
           <VueIcons :name="'scale'" :size="'w-5 h-5'" />
@@ -161,11 +155,15 @@
 
 <script>
 import VueIcons from "@/utils/VueIcons.vue";
+import ShoeRating from "@/components/Modals/ShoeRating.vue";
+import PriceAlert from "./Modals/PriceAlert.vue";
 
 export default {
   name: "ProductCard",
   components: {
     VueIcons,
+    ShoeRating,
+    PriceAlert,
   },
 };
 </script>

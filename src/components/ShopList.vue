@@ -16,7 +16,7 @@
         </h1>
       </div>
       <div class="flex flex-row items-center justify-center space-x-2 pr-3">
-        <h1 class="text-2xl font-bold">$109.95</h1>
+        <h1 class="text-2xl font-bold">£109.95</h1>
         <VueIcons :name="'chevron-right'" :size="'w-4 h-4 text-blue-500'" />
       </div>
     </li>
@@ -41,7 +41,7 @@
         </h1>
         <VueIcons :name="'box'" :size="'w-6 h-6 text-green-500'" />
         <div class="flex flex-row items-center justify-center space-x-2 pr-3">
-          <h1 class="text-2xl font-bold">$109.95</h1>
+          <h1 class="text-2xl font-bold">£109.95</h1>
           <VueIcons :name="'chevron-right'" :size="'w-4 h-4 text-blue-500'" />
         </div>
       </div>
@@ -66,7 +66,7 @@
         </h1>
         <VueIcons :name="'box'" :size="'w-6 h-6 text-green-500'" />
         <div class="flex flex-row items-center justify-center space-x-2 pr-3">
-          <h1 class="text-2xl font-bold">$109.95</h1>
+          <h1 class="text-2xl font-bold">£109.95</h1>
           <VueIcons :name="'chevron-right'" :size="'w-4 h-4 text-blue-500'" />
         </div>
       </div>
@@ -103,7 +103,7 @@
         </h1>
         <VueIcons :name="'box'" :size="'w-6 h-6 text-green-500'" />
         <div class="flex flex-row items-center justify-center space-x-2 pr-3">
-          <h1 class="text-2xl font-bold">$109.95</h1>
+          <h1 class="text-2xl font-bold">£109.95</h1>
           <VueIcons :name="'chevron-right'" :size="'w-4 h-4 text-blue-500'" />
         </div>
       </div>
@@ -128,7 +128,7 @@
         </h1>
         <VueIcons :name="'box'" :size="'w-6 h-6 text-green-500'" />
         <div class="flex flex-row items-center justify-center space-x-2 pr-3">
-          <h1 class="text-2xl font-bold">$109.95</h1>
+          <h1 class="text-2xl font-bold">£109.95</h1>
           <VueIcons :name="'chevron-right'" :size="'w-4 h-4 text-blue-500'" />
         </div>
       </div>
@@ -167,7 +167,7 @@
         </h1>
         <VueIcons :name="'box'" :size="'w-6 h-6 text-green-500'" />
         <div class="flex flex-row items-center justify-center space-x-2 pr-3">
-          <h1 class="text-2xl font-bold">$109.95</h1>
+          <h1 class="text-2xl font-bold">£109.95</h1>
           <VueIcons :name="'chevron-right'" :size="'w-4 h-4 text-blue-500'" />
         </div>
       </div>
