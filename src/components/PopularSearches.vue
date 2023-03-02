@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-screen bg-white p-11 border-b border-gray-300 flex flex-col items-start space-y-4"
-  >
+  <div class="w-screen bg-white p-11 flex flex-col items-start space-y-4">
     <h1 class="text-3xl text-black font-semibold my-2">
       Popular searches in Shoes
     </h1>

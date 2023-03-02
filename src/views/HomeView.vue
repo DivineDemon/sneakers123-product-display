@@ -16,6 +16,7 @@
     <PostQuestion />
     <ProductInformation />
     <PopularSearches />
+    <NewsLetter />
     <BecomeMember />
   </div>
 </template>
@@ -32,6 +33,7 @@ import ShoeReviews from "@/components/ShoeReviews.vue";
 import PostQuestion from "@/components/PostQuestion.vue";
 import ProductInformation from "@/components/ProductInformation.vue";
 import PopularSearches from "@/components/PopularSearches.vue";
+import NewsLetter from "@/components/NewsLetter.vue";
 
 export default {
   name: "HomeView",
@@ -47,6 +49,7 @@ export default {
     PostQuestion,
     ProductInformation,
     PopularSearches,
+    NewsLetter,
   },
 };
 </script>
