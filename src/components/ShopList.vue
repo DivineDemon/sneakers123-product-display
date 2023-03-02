@@ -174,7 +174,7 @@
     </li>
     <!-- Show More -->
     <li
-      class="cursor-pointer w-[10%] mt-5 text-center flex flex-row space-x-3 place-self-center"
+      class="cursor-pointer w-[10%] my-5 text-center flex flex-row space-x-3 place-self-center"
     >
       <VueIcons :name="'plus-circle'" :size="'w-6 h-6'" />
       <span>Show more</span>

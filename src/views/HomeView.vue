@@ -7,10 +7,11 @@
       <InfoTabs />
     </div>
     <!-- Sale Info -->
-    <div class="w-[75%] px-11 pb-11">
+    <div class="w-[75%] px-11">
       <FilterOptions />
       <ShopList />
     </div>
+    <RelatedProducts />
     <BecomeMember />
   </div>
 </template>
@@ -22,6 +23,7 @@ import ProductCard from "@/components/ProductCard.vue";
 import FilterOptions from "@/components/FilterOptions.vue";
 import ShopList from "@/components/ShopList.vue";
 import BecomeMember from "@/components/Modals/BecomeMember.vue";
+import RelatedProducts from "@/components/RelatedProducts.vue";
 
 export default {
   name: "HomeView",
@@ -32,6 +34,7 @@ export default {
     ProductCard,
     FilterOptions,
     BecomeMember,
+    RelatedProducts,
   },
 };
 </script>

@@ -30,3 +30,31 @@
 .multiselect__option:hover {
   background: #EB145F;
 }
+/* Carousel Custom Settings */
+.VueCarousel-navigation-button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 12px !important;
+  font-size: 45px;
+}
+
+.VueCarousel-navigation-button:hover {
+  background-color: white;
+  opacity: 100%;
+  border: 2px solid lightgray;
+}
+
+.VueCarousel-navigation-next {
+  padding-left: 2px !important;
+  margin-right: 75px !important;
+}
+
+.VueCarousel-navigation-prev {
+  padding-right: 2px !important;
+  margin-left: 75px !important;
+}
