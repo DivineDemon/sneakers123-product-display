@@ -11,6 +11,7 @@
       <FilterOptions />
       <ShopList />
     </div>
+    <BecomeMember />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import BreadCrumbs from "@/components/BreadCrumbs.vue";
 import ProductCard from "@/components/ProductCard.vue";
 import FilterOptions from "@/components/FilterOptions.vue";
 import ShopList from "@/components/ShopList.vue";
+import BecomeMember from "@/components/Modals/BecomeMember.vue";
 
 export default {
   name: "HomeView",
@@ -29,6 +31,7 @@ export default {
     BreadCrumbs,
     ProductCard,
     FilterOptions,
+    BecomeMember,
   },
 };
 </script>

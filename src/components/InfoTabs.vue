@@ -47,7 +47,6 @@ export default {
   },
   methods: {
     activateTab(e) {
-      console.log(e.target.id);
       switch (e.target.id) {
         case "prices":
           this.activeTab = "prices";
