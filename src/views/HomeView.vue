@@ -12,6 +12,7 @@
       <ShopList />
     </div>
     <RelatedProducts />
+    <ShoeReviews />
     <BecomeMember />
   </div>
 </template>
@@ -24,6 +25,7 @@ import FilterOptions from "@/components/FilterOptions.vue";
 import ShopList from "@/components/ShopList.vue";
 import BecomeMember from "@/components/Modals/BecomeMember.vue";
 import RelatedProducts from "@/components/RelatedProducts.vue";
+import ShoeReviews from "@/components/ShoeReviews.vue";
 
 export default {
   name: "HomeView",
@@ -35,6 +37,7 @@ export default {
     FilterOptions,
     BecomeMember,
     RelatedProducts,
+    ShoeReviews,
   },
 };
 </script>
