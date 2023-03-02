@@ -160,6 +160,7 @@
       </div>
     </div>
     <button
+      @click="show"
       class="py-2 px-3 bg-white border border-black rounded-lg text-black flex flex-row items-center justify-center space-x-2"
     >
       <VueIcons :name="'pencil'" :size="'w-6 h-6'" />
@@ -174,5 +175,10 @@ import VueIcons from "@/utils/VueIcons.vue";
 export default {
   name: "ShoeReviews",
   components: { VueIcons },
+  methods: {
+    show() {
+      this.$modal.show("rating-modal");
+    },
+  },
 };
 </script>
