@@ -14,6 +14,7 @@
     <RelatedProducts />
     <ShoeReviews />
     <PostQuestion />
+    <ProductInformation />
     <BecomeMember />
   </div>
 </template>
@@ -28,6 +29,7 @@ import BecomeMember from "@/components/Modals/BecomeMember.vue";
 import RelatedProducts from "@/components/RelatedProducts.vue";
 import ShoeReviews from "@/components/ShoeReviews.vue";
 import PostQuestion from "@/components/PostQuestion.vue";
+import ProductInformation from "@/components/ProductInformation.vue";
 
 export default {
   name: "HomeView",
@@ -41,6 +43,7 @@ export default {
     RelatedProducts,
     ShoeReviews,
     PostQuestion,
+    ProductInformation,
   },
 };
 </script>
