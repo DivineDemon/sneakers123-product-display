@@ -24,7 +24,7 @@
 <script>
 import InfoTabs from "@/components/InfoTabs.vue";
 import BreadCrumbs from "@/components/BreadCrumbs.vue";
-import ProductCard from "@/components/ProductCard.vue";
+import ProductCard from "@/components/cards/ProductCard.vue";
 import FilterOptions from "@/components/FilterOptions.vue";
 import ShopList from "@/components/ShopList.vue";
 import BecomeMember from "@/components/Modals/BecomeMember.vue";

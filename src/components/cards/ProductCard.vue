@@ -6,31 +6,10 @@
     <ul
       class="h-[300px] col-span-1 flex flex-col items-start justify-start space-y-3"
     >
-      <li>
+      <li v-for="color in shoeColors" :key="color.id">
         <img
-          src="@/assets/img/angle1.png"
-          alt="angle1"
-          class="p-1 w-12 h-12 rounded-lg border border-gray-400"
-        />
-      </li>
-      <li>
-        <img
-          src="@/assets/img/angle2.png"
-          alt="angle2"
-          class="p-1 w-12 h-12 rounded-lg border border-gray-400"
-        />
-      </li>
-      <li>
-        <img
-          src="@/assets/img/angle3.png"
-          alt="angle3"
-          class="p-1 w-12 h-12 rounded-lg border border-gray-400"
-        />
-      </li>
-      <li>
-        <img
-          src="@/assets/img/angle4.png"
-          alt="angle4"
+          :src="require('@/assets/img/' + color.img)"
+          :alt="color.img"
           class="p-1 w-12 h-12 rounded-lg border border-gray-400"
         />
       </li>
@@ -92,52 +71,10 @@
       </p>
       <!-- Color Variations -->
       <ul class="col-span-1 flex flex-row items-start justify-start space-x-3">
-        <li>
+        <li v-for="color in shoeColors" :key="color.id">
           <img
-            src="@/assets/img/angle1.png"
-            alt="angle1"
-            class="p-1 w-16 h-16 rounded-lg border border-gray-400"
-          />
-        </li>
-        <li>
-          <img
-            src="@/assets/img/angle2.png"
-            alt="angle2"
-            class="p-1 w-16 h-16 rounded-lg border border-gray-400"
-          />
-        </li>
-        <li>
-          <img
-            src="@/assets/img/angle3.png"
-            alt="angle3"
-            class="p-1 w-16 h-16 rounded-lg border border-gray-400"
-          />
-        </li>
-        <li>
-          <img
-            src="@/assets/img/angle4.png"
-            alt="angle4"
-            class="p-1 w-16 h-16 rounded-lg border border-gray-400"
-          />
-        </li>
-        <li>
-          <img
-            src="@/assets/img/angle4.png"
-            alt="angle4"
-            class="p-1 w-16 h-16 rounded-lg border border-gray-400"
-          />
-        </li>
-        <li>
-          <img
-            src="@/assets/img/angle4.png"
-            alt="angle4"
-            class="p-1 w-16 h-16 rounded-lg border border-gray-400"
-          />
-        </li>
-        <li>
-          <img
-            src="@/assets/img/angle4.png"
-            alt="angle4"
+            :src="require('@/assets/img/' + color.img)"
+            :alt="color.img"
             class="p-1 w-16 h-16 rounded-lg border border-gray-400"
           />
         </li>
@@ -152,11 +89,33 @@
 <script>
 import VueIcons from "@/utils/VueIcons.vue";
 import ShoeRating from "@/components/Modals/ShoeRating.vue";
-import PriceAlert from "./Modals/PriceAlert.vue";
-import ShoeVersions from "./Modals/ShoeVersions.vue";
+import PriceAlert from "../Modals/PriceAlert.vue";
+import ShoeVersions from "../Modals/ShoeVersions.vue";
 
 export default {
   name: "ProductCard",
+  data() {
+    return {
+      shoeColors: [
+        {
+          id: 1,
+          img: "angle1.png",
+        },
+        {
+          id: 2,
+          img: "angle2.png",
+        },
+        {
+          id: 3,
+          img: "angle3.png",
+        },
+        {
+          id: 4,
+          img: "angle4.png",
+        },
+      ],
+    };
+  },
   components: {
     VueIcons,
     ShoeRating,
