@@ -6,6 +6,9 @@
 * {
   font-family: 'Barlow', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 /* Modal Custom Settings */
 .vm--modal {
   border-radius: 15px;

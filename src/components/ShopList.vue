@@ -142,7 +142,7 @@
         <span class="font-bold">Too expensive?</span>
         <span>Get a notification as soon as the price drops.</span>
       </p>
-      <button class="bg-primary text-white px-4 py-2 rounded-md">
+      <button @click="show" class="bg-primary text-white px-4 py-2 rounded-md">
         Price alert
       </button>
     </li>
@@ -189,6 +189,11 @@ export default {
   name: "ShopList",
   components: {
     VueIcons,
+  },
+  methods: {
+    show() {
+      this.$modal.show("price-alert-modal");
+    },
   },
 };
 </script>

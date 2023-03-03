@@ -20,6 +20,10 @@ ul {
   list-style-type: "/";
 }
 
+li:first-child {
+  list-style: none;
+}
+
 li {
   margin: 0px 10px;
   padding-left: 10px;
