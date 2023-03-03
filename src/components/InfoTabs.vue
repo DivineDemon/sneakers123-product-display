@@ -18,14 +18,14 @@
     >
       Reviews and tests
     </li>
-    <li
+    <!-- <li
       id="stats"
       class="p-3 cursor-pointer"
       :class="{ 'border-b-2 border-black font-bold': activeTab === 'stats' }"
       @click="activateTab"
     >
       Statistics
-    </li>
+    </li> -->
     <li
       id="info"
       class="p-3 cursor-pointer"
@@ -54,9 +54,9 @@ export default {
         case "reviews":
           this.activeTab = "reviews";
           break;
-        case "stats":
-          this.activeTab = "stats";
-          break;
+        // case "stats":
+        //   this.activeTab = "stats";
+        //   break;
         case "info":
           this.activeTab = "info";
           break;
