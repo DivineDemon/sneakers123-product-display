@@ -32,6 +32,7 @@
       >
         <div class="flex flex-row items-center space-x-3">
           <input
+            v-model="stock"
             type="checkbox"
             class="w-6 h-6 rounded-md"
             :style="{ accentColor: 'black' }"
@@ -40,6 +41,7 @@
         </div>
         <div class="flex flex-row items-center space-x-3">
           <input
+            v-model="devInc"
             type="checkbox"
             class="w-6 h-6 rounded-md"
             :style="{ accentColor: 'black' }"
@@ -48,6 +50,7 @@
         </div>
         <div class="flex flex-row items-center space-x-3">
           <input
+            v-model="variants"
             type="checkbox"
             class="w-6 h-6 rounded-md"
             :style="{ accentColor: 'black' }"
@@ -56,6 +59,7 @@
         </div>
         <div class="flex flex-row items-center space-x-3">
           <input
+            v-model="unverified"
             type="checkbox"
             class="w-6 h-6 rounded-md"
             :style="{ accentColor: 'black' }"
@@ -64,6 +68,7 @@
         </div>
         <div class="flex flex-row items-center space-x-3">
           <input
+            v-model="authorized"
             disabled
             type="checkbox"
             class="w-6 h-6 rounded-md"
@@ -79,6 +84,7 @@
         </div>
         <div class="flex flex-row items-center space-x-3">
           <input
+            v-model="international"
             type="checkbox"
             class="w-6 h-6 rounded-md"
             :style="{ accentColor: 'black' }"
@@ -104,9 +110,10 @@
             <label class="container flex flex-row items-center justify-start">
               <span class="text-[16px] flex items-center">Show all</span>
               <input
+                v-model="deliveryOption"
                 type="radio"
                 name="radio"
-                value="reached"
+                value="Show All"
                 class="flex items-center"
               />
               <span
@@ -121,9 +128,10 @@
             <label class="container flex flex-row items-center justify-start">
               <span class="text-[16px] flex items-center">Home delivery</span>
               <input
+                v-model="deliveryOption"
                 type="radio"
                 name="radio"
-                value="reached"
+                value="Home delivery"
                 class="flex items-center"
               />
               <span
@@ -142,10 +150,11 @@
                 >Store pickup</span
               >
               <input
+                v-model="deliveryOption"
                 disabled
                 type="radio"
                 name="radio"
-                value="reached"
+                value="Store pickup"
                 class="flex items-center"
               />
               <span
@@ -164,10 +173,11 @@
                 >Storage box</span
               >
               <input
+                v-model="deliveryOption"
                 disabled
                 type="radio"
                 name="radio"
-                value="reached"
+                value="Storage box"
                 class="flex items-center cursor-not-allowed"
               />
               <span
@@ -182,9 +192,10 @@
             <label class="container flex flex-row items-center justify-start">
               <span class="text-[16px] flex items-center">Service point</span>
               <input
+                v-model="deliveryOption"
                 type="radio"
                 name="radio"
-                value="reached"
+                value="Service point"
                 class="flex items-center"
               />
               <span
@@ -208,18 +219,74 @@
 
 <script>
 import VueIcons from "@/utils/VueIcons.vue";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "FilterList",
+  data() {
+    return {
+      stock: false,
+      devInc: false,
+      variants: false,
+      unverified: false,
+      authorized: false,
+      international: false,
+      deliveryOption: "",
+    };
+  },
   components: {
     VueIcons,
   },
+  computed: {
+    ...mapGetters(["getStockOnly", "getDeliveryIncluded", "getDeliveryOption"]),
+  },
   methods: {
+    ...mapMutations([
+      "setStockOnly",
+      "setDeliveryIncluded",
+      "setDeliveryOption",
+      "setVariants",
+      "setUnverified",
+      "setAuthorized",
+      "setInternational",
+    ]),
     show() {
       this.$modal.show("filter-list-modal");
     },
     hide() {
       this.$modal.hide("filter-list-modal");
+    },
+  },
+  watch: {
+    stock(newVal) {
+      this.setStockOnly(newVal);
+    },
+    devInc(newVal) {
+      this.setDeliveryIncluded(newVal);
+    },
+    deliveryOption(newVal) {
+      this.setDeliveryOption(newVal);
+    },
+    variants(newVal) {
+      this.setVariants(newVal);
+    },
+    unverified(newVal) {
+      this.setUnverified(newVal);
+    },
+    authorized(newVal) {
+      this.setAuthorized(newVal);
+    },
+    international(newVal) {
+      this.setInternational(newVal);
+    },
+    getStockOnly(newVal) {
+      this.stock = newVal;
+    },
+    getDeliveryIncluded(newVal) {
+      this.devInc = newVal;
+    },
+    getDeliveryOption(newVal) {
+      this.deliveryOption = newVal;
     },
   },
 };

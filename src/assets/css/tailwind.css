@@ -9,6 +9,9 @@
 html {
   scroll-behavior: smooth;
 }
+select option {
+  padding: 50px;
+}
 /* Modal Custom Settings */
 .vm--modal {
   border-radius: 15px;
