@@ -29,37 +29,74 @@
         <span>Price incl. delivery</span>
       </li>
       <li
-        class="bg-white rounded-md shadow-lg flex flex-row items-center justify-start space-x-2"
+        class="bg-white rounded-md shadow-lg flex flex-row items-center justify-start space-x-2 relative"
       >
-        <dropdown
-          :options="deliveryOptions"
-          :selected="finalDelivery"
-          :placeholder="'Delivery Options'"
-          :closeOnOutsideClick="true"
-          class="my-dropdown-toggle"
-          v-on:updateOption="updateDelivery"
+        <div class="flex flex-row items-center justify-center p-2">
+          <input
+            id="delivery"
+            type="text"
+            placeholder="Delivery Options"
+            v-model="finalDelivery"
+            @click="show"
+            class="focus:border-0 focus:outline-0 focus:ring-0 focus-visible:border-0 focus-visible:outline-0 focus-visible:ring-0 cursor-pointer"
+          />
+          <VueIcons :name="'chevron-down'" :size="'w-4 h-4 text-black'" />
+        </div>
+        <!-- Dropdown -->
+        <div
+          class="w-[100%] z-50 absolute top-11 left-[-8px] flex flex-col items-start justify-center bg-white rounded-md shadow-xl border border-gray-300"
+          :class="{ hidden: !showDeliveryOptions }"
         >
-        </dropdown>
+          <p
+            v-for="option in deliveryOptions"
+            :key="option.id"
+            class="hover:bg-gray-200 hover:text-primary w-[100%] px-3 py-2 cursor-pointer"
+            :class="{
+              'text-primary': finalDelivery === option.name,
+            }"
+            @click="updateDeliveryOption(option.name)"
+          >
+            {{ option.name }}
+          </p>
+        </div>
       </li>
     </ul>
     <div
-      class="bg-white rounded-md flex flex-row shadow-lg items-center justify-start space-x-2"
+      class="bg-white rounded-md flex flex-row shadow-lg items-center justify-start space-x-2 relative"
     >
-      <dropdown
-        :options="sortOptions"
-        :selected="finalSort"
-        :placeholder="'Lowest Price'"
-        :closeOnOutsideClick="true"
-        class="my-dropdown-toggle"
-        v-on:updateOption="updateSort"
+      <div class="flex flex-row items-center justify-center p-2">
+        <input
+          id="sort"
+          type="text"
+          :placeholder="finalSort"
+          v-model="finalSort"
+          @click="show"
+          class="focus:border-0 focus:outline-0 focus:ring-0 focus-visible:border-0 focus-visible:outline-0 focus-visible:ring-0 cursor-pointer"
+        />
+        <VueIcons :name="'chevron-down'" :size="'w-4 h-4 text-black'" />
+      </div>
+      <!-- Dropdown -->
+      <div
+        class="w-[100%] z-50 absolute top-11 left-[-8px] flex flex-col items-start justify-center bg-white rounded-md shadow-xl border border-gray-300 cursor-pointer"
+        :class="{ hidden: !showSortOptions }"
       >
-      </dropdown>
+        <p
+          v-for="option in sortOptions"
+          :key="option.id"
+          class="hover:bg-gray-200 hover:text-primary w-[100%] px-3 py-2"
+          :class="{
+            'text-primary': finalSort === option.name,
+          }"
+          @click="updateSortOption(option.name)"
+        >
+          {{ option.name }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import dropdown from "vue-dropdowns";
 import VueIcons from "@/utils/VueIcons.vue";
 import FilterList from "./Modals/FilterList.vue";
 import { mapGetters, mapMutations } from "vuex";
@@ -69,20 +106,39 @@ export default {
   data() {
     return {
       count: 0,
+      showDeliveryOptions: false,
+      showSortOptions: false,
       deliveryOptions: [
-        { name: "Show All" },
-        { name: "Home delivery" },
-        { name: "Store pickup" },
-        { name: "Storage box" },
-        { name: "Service point" },
+        {
+          id: 1,
+          name: "Show all",
+        },
+        {
+          id: 2,
+          name: "Home delivery",
+        },
+        {
+          id: 3,
+          name: "Store pickup",
+        },
+        {
+          id: 4,
+          name: "Storage box",
+        },
+        {
+          id: 5,
+          name: "Service point",
+        },
+      ],
+      sortOptions: [
+        { id: 1, name: "Lowest Price" },
+        { id: 2, name: "Fastest Delivery" },
       ],
       finalDelivery: "",
-      sortOptions: [{ name: "Lowest Price" }, { name: "Fastest Delivery" }],
-      finalSort: "",
+      finalSort: "Lowest Price",
     };
   },
   components: {
-    dropdown,
     VueIcons,
     FilterList,
   },
@@ -103,9 +159,6 @@ export default {
       "setDeliveryOption",
       "setSortOption",
     ]),
-    updateDelivery(payload) {
-      this.finalDelivery = payload;
-    },
     updateSort(payload) {
       this.finalSort = payload;
     },
@@ -114,6 +167,21 @@ export default {
     },
     deliveryIncludedUpdate() {
       this.setDeliveryIncluded(!this.getDeliveryIncluded);
+    },
+    updateDeliveryOption(val) {
+      this.finalDelivery = val;
+      this.setDeliveryOption(val);
+    },
+    updateSortOption(val) {
+      this.finalSort = val;
+      this.setSortOption(val);
+    },
+    show(e) {
+      if (e.target.id === "delivery") {
+        this.showDeliveryOptions = !this.showDeliveryOptions;
+      } else {
+        this.showSortOptions = !this.showSortOptions;
+      }
     },
   },
   watch: {
@@ -136,18 +204,11 @@ export default {
       }
     },
     getDeliveryOption(newVal) {
-      console.log(newVal);
-      this.finalDelivery = { name: newVal };
-    },
-    finalDelivery(newVal) {
-      this.setDeliveryOption(newVal);
+      this.finalDelivery = newVal;
     },
     finalSort(newVal) {
       this.setSortOption(newVal);
     },
-  },
-  created() {
-    this.count = this.getFilterCount;
   },
 };
 </script>

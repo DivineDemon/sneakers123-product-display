@@ -115,6 +115,7 @@
                 name="radio"
                 value="Show All"
                 class="flex items-center"
+                @click="checkDeliveryOption"
               />
               <span
                 class="checkmark flex items-center border border-gray-300 hover:border-black"
@@ -133,6 +134,7 @@
                 name="radio"
                 value="Home delivery"
                 class="flex items-center"
+                @click="checkDeliveryOption"
               />
               <span
                 class="checkmark flex items-center border border-gray-300 hover:border-black"
@@ -156,6 +158,7 @@
                 name="radio"
                 value="Store pickup"
                 class="flex items-center"
+                @click="checkDeliveryOption"
               />
               <span
                 class="checkmark flex items-center border border-gray-300 hover:border-black"
@@ -179,6 +182,7 @@
                 name="radio"
                 value="Storage box"
                 class="flex items-center cursor-not-allowed"
+                @click="checkDeliveryOption"
               />
               <span
                 class="checkmark flex items-center border border-gray-300 hover:border-black"
@@ -197,6 +201,7 @@
                 name="radio"
                 value="Service point"
                 class="flex items-center"
+                @click="checkDeliveryOption"
               />
               <span
                 class="checkmark flex items-center border border-gray-300 hover:border-black"
@@ -256,6 +261,9 @@ export default {
     hide() {
       this.$modal.hide("filter-list-modal");
     },
+    checkDeliveryOption(e) {
+      this.setDeliveryOption(e.target.value);
+    },
   },
   watch: {
     stock(newVal) {
@@ -263,9 +271,6 @@ export default {
     },
     devInc(newVal) {
       this.setDeliveryIncluded(newVal);
-    },
-    deliveryOption(newVal) {
-      this.setDeliveryOption(newVal);
     },
     variants(newVal) {
       this.setVariants(newVal);
