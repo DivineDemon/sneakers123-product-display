@@ -231,7 +231,6 @@ export default {
       this.devInc = newVal;
     },
     getDeliveryOption(newVal) {
-      console.log(newVal);
       this.deliveryOption = newVal;
     },
   },
