@@ -105,101 +105,19 @@
         <div class="flex flex-col items-center space-y-3">
           <!-- Radio -->
           <div
+            v-for="option in deliveryOptions"
+            :key="option.id"
             class="pt-3 w-[100%] flex flex-row items-center justify-center space-x-2"
           >
             <label class="container flex flex-row items-center justify-start">
-              <span class="text-[16px] flex items-center">Show all</span>
+              <span class="text-[16px] flex items-center">{{
+                option.name
+              }}</span>
               <input
                 v-model="deliveryOption"
                 type="radio"
                 name="radio"
-                value="Show All"
-                class="flex items-center"
-                @click="checkDeliveryOption"
-              />
-              <span
-                class="checkmark flex items-center border border-gray-300 hover:border-black"
-              />
-            </label>
-          </div>
-          <!-- Radio -->
-          <div
-            class="pt-3 w-[100%] flex flex-row items-center justify-center space-x-2"
-          >
-            <label class="container flex flex-row items-center justify-start">
-              <span class="text-[16px] flex items-center">Home delivery</span>
-              <input
-                v-model="deliveryOption"
-                type="radio"
-                name="radio"
-                value="Home delivery"
-                class="flex items-center"
-                @click="checkDeliveryOption"
-              />
-              <span
-                class="checkmark flex items-center border border-gray-300 hover:border-black"
-              />
-            </label>
-          </div>
-          <!-- Radio -->
-          <div
-            class="pt-3 w-[100%] flex flex-row items-center justify-center space-x-2"
-          >
-            <label
-              class="container flex flex-row items-center justify-start cursor-not-allowed"
-            >
-              <span class="text-[16px] flex items-center text-gray-400"
-                >Store pickup</span
-              >
-              <input
-                v-model="deliveryOption"
-                disabled
-                type="radio"
-                name="radio"
-                value="Store pickup"
-                class="flex items-center"
-                @click="checkDeliveryOption"
-              />
-              <span
-                class="checkmark flex items-center border border-gray-300 hover:border-black"
-              />
-            </label>
-          </div>
-          <!-- Radio -->
-          <div
-            class="pt-3 w-[100%] flex flex-row items-center justify-center space-x-2"
-          >
-            <label
-              class="container flex flex-row items-center justify-start cursor-not-allowed"
-            >
-              <span class="text-[16px] flex items-center text-gray-400"
-                >Storage box</span
-              >
-              <input
-                v-model="deliveryOption"
-                disabled
-                type="radio"
-                name="radio"
-                value="Storage box"
-                class="flex items-center cursor-not-allowed"
-                @click="checkDeliveryOption"
-              />
-              <span
-                class="checkmark flex items-center border border-gray-300 hover:border-black"
-              />
-            </label>
-          </div>
-          <!-- Radio -->
-          <div
-            class="pt-3 w-[100%] flex flex-row items-center justify-center space-x-2"
-          >
-            <label class="container flex flex-row items-center justify-start">
-              <span class="text-[16px] flex items-center">Service point</span>
-              <input
-                v-model="deliveryOption"
-                type="radio"
-                name="radio"
-                value="Service point"
+                :value="option.name"
                 class="flex items-center"
                 @click="checkDeliveryOption"
               />
@@ -236,7 +154,29 @@ export default {
       unverified: false,
       authorized: false,
       international: false,
-      deliveryOption: "",
+      deliveryOption: "Show all",
+      deliveryOptions: [
+        {
+          id: 1,
+          name: "Show all",
+        },
+        {
+          id: 2,
+          name: "Home delivery",
+        },
+        {
+          id: 3,
+          name: "Store pickup",
+        },
+        {
+          id: 4,
+          name: "Storage box",
+        },
+        {
+          id: 5,
+          name: "Service point",
+        },
+      ],
     };
   },
   components: {
@@ -291,6 +231,7 @@ export default {
       this.devInc = newVal;
     },
     getDeliveryOption(newVal) {
+      console.log(newVal);
       this.deliveryOption = newVal;
     },
   },
